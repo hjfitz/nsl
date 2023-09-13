@@ -1,0 +1,41 @@
+{
+  "name": "advent-of-code-2021",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:hjfitz/advent-of-code-2021.git",
+  "author": "Harry Fitzgerald <harry.fitzgerald@truepill.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "@babel/preset-typescript": "^7.16.0",
+    "@types/jest": "^27.0.3",
+    "@types/node": "^16.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "babel-jest": "^27.4.2",
+    "eslint": "^8.3.0",
+    "jest": "^27.4.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
+  },
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "start": "ts-node index.ts",
+    "build": "babel index.ts --out-file index.js",
+    "build:watch": "babel index.ts --out-file index.js --watch",
+    "build:prod": "babel index.ts --out-file index.js --minified --no-comments",
+    "build:prod:watch": "babel index.ts --out-file index.js --minified --no-comments --watch",
+    "build:prod:run": "babel index.ts --out-file index.js --minified --no-comments && node index.js",
+    "build:prod:run:watch": "babel index.ts --out-file index.js --minified --no-comments --watch && node index.js",
+    "build:prod:run:watch:debug": "babel index.ts --out-file index.js --minified --no-comments --watch && node --inspect-brk index.js",
+    "deploy": "git push heroku main",
+    "deploy:prod": "git push heroku main",
+    "deploy:staging": "git push heroku main:staging",
+    "crack:md5": "node crack-md5.js"
+  }
+}
